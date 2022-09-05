@@ -4,10 +4,14 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ zoo-games/zoo-games-subgraph",
-    "create-local": "graph create --node http://localhost:8020/ zoo-games/zoo-games-subgraph",
-    "remove-local": "graph remove --node http://localhost:8020/ zoo-games/zoo-games-subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 zoo-games/zoo-games-subgraph"
+    "deploy": "yarn codegen && yarn build && yarn create-local && yarn deploy-local",
+    "deploy2": "yarn codegen && yarn build && yarn create-local2 && yarn deploy-local2",
+    "create-local": "graph create --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
+    "remove-local": "graph remove --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
+    "deploy-local": "graph deploy --node https://graph.zookeeper.finance/deploy --ipfs http://graph.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
+    "create-local2": "graph create --node https://thegraph.one/deploy zoo-games/zoo-games-subgraph",
+    "remove-local2": "graph remove --node https://thegraph.one/deploy zoo-games/zoo-games-subgraph",
+    "deploy-local2": "graph deploy --node https://thegraph.one/deploy --ipfs http://thegraph.one:5001 zoo-games/zoo-games-subgraph"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.26.0",

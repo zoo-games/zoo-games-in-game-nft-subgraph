@@ -1,6 +1,22 @@
-type ExampleEntity @entity {
+type GameStatus @entity {
   id: ID!
-  count: BigInt!
-  _gamePrimary: Bytes! # address
-  _enable: Boolean! # bool
+  roundId: Bytes!
+  gamePrimary: Bytes! # address
+  status: String! # uint256
+  timestamp: BigInt!
+}
+
+type GameRegisterRequest @entity {
+  id: ID!
+  gamePrimary: Bytes! # address
+  gameName: String!
+  gameDescription: String
+  gameImageURL: String
+  gameCategory: String
+  maxVZOO: BigInt!
+  minTimeCostPerRound: BigInt!
+  maxPlayerCountPerRound: BigInt!
+  email: String!
+  informationJsonURL: String!
+  status: String!
 }

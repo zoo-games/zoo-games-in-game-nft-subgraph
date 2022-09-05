@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0x52aB976b6fC2fB3a995c01F6d2f56eAC0d5692ca"
       abi: GameCore
+      startBlock: 20413237
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
