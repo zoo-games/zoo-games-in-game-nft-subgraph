@@ -9,7 +9,7 @@
     "deploy2": "yarn codegen && yarn build && yarn create-local2 && yarn deploy-local2",
     "create-testnet": "graph create --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
     "remove-testnet": "graph remove --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
-    "deploy-testnet": "graph deploy --node https://graph-testnet.zookeeper.finance/deploy --ipfs http://graph.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
+    "deploy-testnet": "graph deploy --node https://graph-testnet.zookeeper.finance/deploy --ipfs http://graph-testnet.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
     "create-local": "graph create --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
     "remove-local": "graph remove --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
     "deploy-local": "graph deploy --node https://graph.zookeeper.finance/deploy --ipfs http://graph.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
