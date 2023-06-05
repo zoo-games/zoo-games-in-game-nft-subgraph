@@ -1,21 +1,21 @@
 {
-  "name": "zoo-games-subgraph",
-  "license": "UNLICENSED",
+  "name": "zoo-games-in-game-nft-subgraph",
+  "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
     "deployTestnet": "yarn codegen && yarn build && yarn create-testnet && yarn deploy-testnet",
     "deploy": "yarn codegen && yarn build && yarn create-local && yarn deploy-local",
     "deploy2": "yarn codegen && yarn build && yarn create-local2 && yarn deploy-local2",
-    "create-testnet": "graph create --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
-    "remove-testnet": "graph remove --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
-    "deploy-testnet": "graph deploy --node https://graph-testnet.zookeeper.finance/deploy --ipfs http://graph-testnet.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
-    "create-local": "graph create --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
-    "remove-local": "graph remove --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-subgraph",
-    "deploy-local": "graph deploy --node https://graph.zookeeper.finance/deploy --ipfs http://graph.zookeeper.finance:5001 zoo-games/zoo-games-subgraph",
-    "create-local2": "graph create --node https://thegraph.one/deploy zoo-games/zoo-games-subgraph",
-    "remove-local2": "graph remove --node https://thegraph.one/deploy zoo-games/zoo-games-subgraph",
-    "deploy-local2": "graph deploy --node https://thegraph.one/deploy --ipfs http://thegraph.one:5001 zoo-games/zoo-games-subgraph"
+    "create-testnet": "graph create --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "remove-testnet": "graph remove --node https://graph-testnet.zookeeper.finance/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "deploy-testnet": "graph deploy --node https://graph-testnet.zookeeper.finance/deploy --ipfs http://graph-testnet.zookeeper.finance:5001 zoo-games/zoo-games-in-game-nft-subgraph",
+    "create-local": "graph create --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "remove-local": "graph remove --node https://graph.zookeeper.finance/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "deploy-local": "graph deploy --node https://graph.zookeeper.finance/deploy --ipfs http://graph.zookeeper.finance:5001 zoo-games/zoo-games-in-game-nft-subgraph",
+    "create-local2": "graph create --node https://thegraph.one/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "remove-local2": "graph remove --node https://thegraph.one/deploy zoo-games/zoo-games-in-game-nft-subgraph",
+    "deploy-local2": "graph deploy --node https://thegraph.one/deploy --ipfs http://thegraph.one:5001 zoo-games/zoo-games-in-game-nft-subgraph"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.26.0",

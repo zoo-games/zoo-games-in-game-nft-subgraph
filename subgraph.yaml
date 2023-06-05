@@ -3,91 +3,42 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: GameCore
+    name: ERC721Manager
     network: mainnet
     source:
-      address: "0x52aB976b6fC2fB3a995c01F6d2f56eAC0d5692ca"
-      abi: GameCore
-      startBlock: 20413237
+      address: "0xc2ecD84289e95Bc17642219760a6C11081D48a21"
+      abi: ERC721Manager
+      startBlock: 25760995
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AuditGame
-        - ConfigLockTime
-        - ConfigMirror
-        - ConfigTimeLock
-        - ConfigVZOO
-        - CreateUser
-        - EmergMirrorWithdraw
-        - EmergWithdraw
-        - EnterTimeLock
-        - GameCancel
-        - GameEnd
-        - GameStart
-        - Initialized
-        - LockVZOO
-        - Pause
-        - PaymentInGame
-        - RequestRegisterGame
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
-        - UpdateBanned
-        - UpdatePlatformFee
-        - Withdraw
-        - WithdrawFee
+        - ERC721Created
       abis:
-        - name: GameCore
-          file: ./abis/GameCore.json
+        - name: ERC721Manager
+          file: ./abis/ERC721Manager.json
       eventHandlers:
-        - event: AuditGame(address,bool)
-          handler: handleAuditGame
-        - event: ConfigLockTime(uint256)
-          handler: handleConfigLockTime
-        - event: ConfigMirror(address,address)
-          handler: handleConfigMirror
-        - event: ConfigTimeLock(address)
-          handler: handleConfigTimeLock
-        - event: ConfigVZOO(address)
-          handler: handleConfigVZOO
-        - event: CreateUser(address,string,address,uint64)
-          handler: handleCreateUser
-        - event: EmergMirrorWithdraw(address,address,uint256,address)
-          handler: handleEmergMirrorWithdraw
-        - event: EmergWithdraw(address,uint256)
-          handler: handleEmergWithdraw
-        - event: EnterTimeLock(address,uint256)
-          handler: handleEnterTimeLock
-        - event: GameCancel(bytes32,address,uint256)
-          handler: handleGameCancel
-        - event: GameEnd(bytes32,address,uint256,uint256[],uint256,uint256,uint256)
-          handler: handleGameEnd
-        - event: GameStart((bytes32,address,uint256,address[],uint256[]),uint256)
-          handler: handleGameStart
-        - event: Initialized(uint8)
-          handler: handleInitialized
-        - event: LockVZOO(bytes32,address,address)
-          handler: handleLockVZOO
-        - event: Pause(bool)
-          handler: handlePause
-        - event: PaymentInGame(address,address,uint256,uint256)
-          handler: handlePaymentInGame
-        - event: RequestRegisterGame((string,string,string,string,uint256,uint256,uint256,string,string))
-          handler: handleRequestRegisterGame
-        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
-          handler: handleRoleAdminChanged
-        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleGranted
-        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleRevoked
-        - event: UpdateBanned(address,bool)
-          handler: handleUpdateBanned
-        - event: UpdatePlatformFee(address,uint256)
-          handler: handleUpdatePlatformFee
-        - event: Withdraw(address,address,address,uint256,address)
-          handler: handleWithdraw
-        - event: WithdrawFee(address,uint256)
-          handler: handleWithdrawFee
+        - event: ERC721Created(address,string,string)
+          handler: handleERC721Created
+      file: ./src/mapping.ts
+
+templates:
+  - name: ManagedERC721
+    kind: ethereum/contract
+    network: mainnet
+    source:
+      abi: ManagedERC721
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: ManagedERC721
+          file: ./abis/ManagedERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
       file: ./src/mapping.ts

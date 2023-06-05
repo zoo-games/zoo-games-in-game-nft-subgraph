@@ -1,22 +1,16 @@
-type GameStatus @entity {
+type ERC721CollectionInfo @entity {
   id: ID!
-  roundId: Bytes!
-  gamePrimary: Bytes! # address
-  status: String! # uint256
+  address: Bytes! # address
+  name: String!
+  symbol: String!
   timestamp: BigInt!
 }
 
-type GameRegisterRequest @entity {
+type ERC721NFTInfo @entity {
   id: ID!
-  gamePrimary: Bytes! # address
-  gameName: String!
-  gameDescription: String
-  gameImageURL: String
-  gameCategory: String
-  maxVZOO: BigInt!
-  minTimeCostPerRound: BigInt!
-  maxPlayerCountPerRound: BigInt!
-  email: String!
-  informationJsonURL: String!
-  status: String!
+  collection: Bytes! # address
+  tokenId: BigInt!
+  owner: Bytes! # address
+  uri: String!
+  timestamp: BigInt!
 }
