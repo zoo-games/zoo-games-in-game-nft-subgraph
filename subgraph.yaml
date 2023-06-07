@@ -6,9 +6,9 @@ dataSources:
     name: ERC721Manager
     network: mainnet
     source:
-      address: "0xc2ecD84289e95Bc17642219760a6C11081D48a21"
+      address: "0x41Cd1b7eA68a8f928394AFe3Afa56E22a68cb2C3"
       abi: ERC721Manager
-      startBlock: 25760995
+      startBlock: 26734351
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
