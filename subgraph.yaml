@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: ERC721Manager
-    network: mainnet
+    network: fuji
     source:
-      address: "0xc2ecD84289e95Bc17642219760a6C11081D48a21"
+      address: "0xF04f50a2d006e549C1245A9e939259B77d70C226"
       abi: ERC721Manager
-      startBlock: 25760995
+      startBlock: 28581548
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -26,7 +26,7 @@ dataSources:
 templates:
   - name: ManagedERC721
     kind: ethereum/contract
-    network: mainnet
+    network: fuji
     source:
       abi: ManagedERC721
     mapping:
